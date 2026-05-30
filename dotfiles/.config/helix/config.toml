@@ -1,0 +1,26 @@
+theme = "gruvbox_light_hard"
+
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+middle-click-paste = false
+
+[editor.file-picker]
+hidden = false
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+other-lines = "error"
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+character = "┆"

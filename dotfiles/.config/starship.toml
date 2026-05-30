@@ -1,0 +1,68 @@
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$line_break\
+$character\
+"""
+
+right_format = """
+$time\
+"""
+
+add_newline = true
+
+[character]
+success_symbol = "[Woof!](bold italic fg:#79740e)"
+error_symbol   = "[Grr!](bold italic fg:#9d0006)"
+
+[username]
+format = "[$user]($style)@"
+style = "fg:#3c3836"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style) "
+style = "fg:#7c6f64"
+show_always = true
+
+[directory]
+format = "[$path]($style) "
+style = "fg:#076678"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "fg:#8f3f71"
+
+[git_status]
+format = "([\\[$conflicted$untracked$modified$staged$renamed$deleted\\]]($style) )[$ahead_behind]($style)[$stashed]($style) "
+style = "fg:#af3a03"
+
+conflicted = "="
+untracked  = "?"
+modified   = "!"
+staged     = "+"
+renamed    = ">"
+deleted    = "x"
+stashed    = "*"
+ahead      = "↑${count} "
+behind     = "↓${count} "
+diverged   = "↑${ahead_count}↓${behind_count} "
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "fg:#7c6f64"
+
+[cmd_duration]
+format = "[$duration]($style) "
+style = "fg:#7c6f64"
+min_time = 500
+
+[time]
+format = "[$time]($style)"
+style = "fg:#427b58"
+disabled = false
+time_format = "%I:%M"

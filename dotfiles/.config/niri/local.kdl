@@ -1,0 +1,72 @@
+animations {
+    slowdown 0.5
+}
+
+workspace "main"
+workspace "youtube"
+workspace "notes"
+workspace "discord"
+
+// note: at-startup=true matches only during first 60s.
+window-rule {
+    open-maximized true
+    open-maximized-to-edges false
+    open-fullscreen false
+    opacity 0.9
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+window-rule {
+    match app-id=r#"^com\.mitchellh\.ghostty$"#
+    open-maximized false
+    opacity 0.85
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^com\.mitchellh\.ghostty$"#
+    open-on-workspace "main"
+    open-focused true
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^helium$"#
+    open-on-workspace "main"
+    open-focused false
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^obsidian$"#
+    open-on-workspace "notes"
+    open-focused false
+}
+
+window-rule {
+    match at-startup=true app-id=r#"^vesktop$"#
+    open-on-workspace "discord"
+    open-focused false
+}
+
+spawn-at-startup "ghostty"
+spawn-at-startup "helium-browser" "--profile-directory=Default"
+spawn-at-startup "obsidian"
+spawn-at-startup "vesktop"
+
+binds {
+    Mod+Alt+W hotkey-overlay-title="Open Browser" {
+        spawn "helium-browser" "--profile-directory=Default";
+    }
+    Mod+Alt+Y hotkey-overlay-title="Open Browser Profile 1" {
+        spawn "helium-browser" "--profile-directory=Profile 1";
+    }
+    Mod+Ctrl+1 { focus-workspace "main"; }
+    Mod+Ctrl+2 { focus-workspace "youtube"; }
+    Mod+Ctrl+3 { focus-workspace "notes"; }
+    Mod+Ctrl+4 { focus-workspace "discord"; }
+    Mod+Ctrl+Shift+1 { move-column-to-workspace "main"; }
+    Mod+Ctrl+Shift+2 { move-column-to-workspace "youtube"; }
+    Mod+Ctrl+Shift+3 { move-column-to-workspace "notes"; }
+    Mod+Ctrl+Shift+4 { move-column-to-workspace "discord"; }
+}

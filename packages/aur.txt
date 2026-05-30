@@ -1,0 +1,6 @@
+openai-codex-bin
+opencode-bin
+bibata-cursor-theme
+vesktop-bin
+helium-browser-bin
+otf-space-grotesk

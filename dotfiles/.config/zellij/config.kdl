@@ -1,0 +1,48 @@
+theme "gruvbox-light"
+pane_frames true
+show_startup_tips false
+advanced_mouse_actions false
+mouse_hover_effects false
+default_layout "minimal"
+on_force_close "quit"
+default_shell "/home/nirmit/.config/zellij/scripts/zellij-shell.zsh"
+
+load_plugins {
+    "file:/home/nirmit/.config/zellij/plugins/zjstatus.wasm"
+}
+
+plugins {
+    room location="file:/home/nirmit/.config/zellij/plugins/room.wasm"
+}
+
+keybinds {
+    shared_except "locked" {
+        bind "?" {
+            Run "/home/nirmit/.config/zellij/scripts/zellij-help.zsh" {
+                floating true
+                close_on_exit true
+                name "help"
+                x "25%"
+                y "15%"
+                width "50%"
+                height "65%"
+            }
+        }
+        bind "Alt Space" {
+            Run "/usr/bin/zsh" "-i" {
+                floating true
+                close_on_exit true
+                name "scratch"
+                x "25%"
+                y "25%"
+                width "50%"
+                height "50%"
+            }
+        }
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "room" {
+                floating true
+            }
+        }
+    }
+}

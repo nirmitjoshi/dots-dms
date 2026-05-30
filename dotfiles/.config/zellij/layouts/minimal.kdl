@@ -1,0 +1,44 @@
+layout {
+    default_tab_template {
+        children
+        pane size=2 borderless=true {
+            plugin location="file:/home/nirmit/.config/zellij/plugins/zjstatus.wasm" {
+                format_left   "{mode}"
+                format_center "{tabs}"
+                format_right  "#[fg=#076678,bold]{session}"
+                format_space  ""
+
+                border_enabled  "true"
+                border_char     "─"
+                border_format   "#[fg=#d5c4a1]{char}"
+                border_position "top"
+
+                hide_frame_for_single_pane "false"
+
+                mode_normal       "#[fg=#076678,bold] NORMAL "
+                mode_pane         "#[fg=#427b58,bold] PANE "
+                mode_tab          "#[fg=#8f3f71,bold] TAB "
+                mode_resize       "#[fg=#b57614,bold] RESIZE "
+                mode_scroll       "#[fg=#af3a03,bold] SCROLL "
+                mode_search       "#[fg=#af3a03,bold] SEARCH "
+                mode_enter_search "#[fg=#b57614,bold] SEARCH "
+                mode_session      "#[fg=#79740e,bold] SESSION "
+                mode_move         "#[fg=#3c3836,bold] MOVE "
+                mode_locked       "#[fg=#9d0006,bold] LOCKED "
+                mode_rename_tab   "#[fg=#8f3f71,bold] RENAME TAB "
+                mode_rename_pane  "#[fg=#427b58,bold] RENAME PANE "
+                mode_prompt       "#[fg=#9d0006,bold] PROMPT "
+                mode_tmux         "#[fg=#af3a03,bold] TMUX "
+                mode_default_to_mode "normal"
+
+                tab_normal   "#[fg=#7c6f64] {name} "
+                tab_active   "#[fg=#3c3836,bold] {name} "
+
+            }
+        }
+    }
+    tab name="main" split_direction="vertical" {
+        pane name="llm" cwd="/home/nirmit/ohmybytes/projects" size="40%"
+        pane name="code" cwd="/home/nirmit/ohmybytes/projects" size="60%" focus=true
+    }
+}
