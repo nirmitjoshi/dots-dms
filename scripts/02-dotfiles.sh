@@ -41,4 +41,7 @@ ln -sfn "$user_unit_src" "$user_unit_dst"
 ln -sfn /usr/lib/systemd/user/dms.service "$niri_wants_dir/dms.service"
 ln -sfn "$user_unit_dst" "$niri_wants_dir/kdeconnectd.service"
 
+echo "Enabling syncthing user service"
+systemctl --user enable syncthing.service
+
 echo "Dotfiles setup completed"

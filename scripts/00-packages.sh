@@ -39,3 +39,10 @@ if [[ "${#aur_packages[@]}" -gt 0 ]]; then
   echo "Installing AUR packages"
   paru -S --needed --noconfirm "${aur_packages[@]}"
 fi
+
+echo "Enabling tailscaled service"
+sudo systemctl enable tailscaled
+
+echo "Allowing KDE Connect through ufw"
+sudo ufw allow 1714:1764/tcp
+sudo ufw allow 1714:1764/udp
