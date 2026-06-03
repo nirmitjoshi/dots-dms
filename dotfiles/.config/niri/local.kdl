@@ -22,7 +22,6 @@ window-rule {
 window-rule {
     match app-id=r#"^com\.mitchellh\.ghostty$"#
     open-maximized false
-    opacity 0.85
 }
 
 window-rule {
