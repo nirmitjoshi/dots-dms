@@ -43,6 +43,9 @@ fi
 echo "Enabling tailscaled service"
 sudo systemctl enable tailscaled
 
+echo "Enabling sshd service"
+sudo systemctl enable sshd
+
 echo "Allowing KDE Connect through ufw"
 sudo ufw allow 1714:1764/tcp
 sudo ufw allow 1714:1764/udp
