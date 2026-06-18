@@ -17,15 +17,15 @@ plugins {
 
 keybinds {
     shared_except "locked" {
-        bind "?" {
+        bind "F1" {
             Run "/home/nirmit/.config/zellij/scripts/zellij-help.zsh" {
                 floating true
                 close_on_exit true
                 name "help"
-                x "25%"
-                y "15%"
-                width "50%"
-                height "65%"
+                x "12%"
+                y "6%"
+                width "76%"
+                height "88%"
             }
         }
         bind "Alt Space" {
@@ -33,10 +33,10 @@ keybinds {
                 floating true
                 close_on_exit true
                 name "scratch"
-                x "25%"
-                y "25%"
-                width "50%"
-                height "50%"
+                x "18%"
+                y "18%"
+                width "64%"
+                height "64%"
             }
         }
         bind "Ctrl y" {

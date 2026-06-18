@@ -37,8 +37,11 @@ layout {
             }
         }
     }
-    tab name="main" split_direction="vertical" {
-        pane name="llm" cwd="/home/nirmit/ohmybytes/projects" size="40%"
-        pane name="code" cwd="/home/nirmit/ohmybytes/projects" size="60%" focus=true
+    tab name="main" focus=true {
+        pane name="default"
+    }
+    tab name="work" split_direction="vertical" {
+        pane name="llm" size="40%"
+        pane name="code" size="60%"
     }
 }
