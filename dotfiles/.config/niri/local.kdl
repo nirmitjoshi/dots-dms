@@ -60,12 +60,4 @@ binds {
     Mod+Alt+Y hotkey-overlay-title="Open Browser Profile 1" {
         spawn "helium-browser" "--profile-directory=Profile 1";
     }
-    Mod+Ctrl+1 { focus-workspace "main"; }
-    Mod+Ctrl+2 { focus-workspace "youtube"; }
-    Mod+Ctrl+3 { focus-workspace "notes"; }
-    Mod+Ctrl+4 { focus-workspace "discord"; }
-    Mod+Ctrl+Shift+1 { move-column-to-workspace "main"; }
-    Mod+Ctrl+Shift+2 { move-column-to-workspace "youtube"; }
-    Mod+Ctrl+Shift+3 { move-column-to-workspace "notes"; }
-    Mod+Ctrl+Shift+4 { move-column-to-workspace "discord"; }
 }
